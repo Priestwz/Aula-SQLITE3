@@ -48,10 +48,15 @@ cursor = conexao.cursor()
 
 
 #Atualizar dados no banco
-cursor.execute("""
-UPDATE alunos
-SET idade = ?, curso = ?
-WHERE id = ?
-""", (87, "Medicina", 2)
-)
-conexao.commit()
+# cursor.execute("""
+# UPDATE alunos
+# SET idade = ?, curso = ?
+# WHERE id = ?
+# """, (87, "Medicina", 2)
+# )
+# conexao.commit()
+
+
+
+
+#Função listar dados no banco
