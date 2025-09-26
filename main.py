@@ -60,3 +60,15 @@ cursor = conexao.cursor()
 
 
 #Função listar dados no banco
+#Consultar os dados no banco
+cursor.execute("SELECT * FROM alunos")
+#fetchall traz todas as linhas da consulta
+for linha in cursor.fetchall():
+    print(F"ID: {linha[0]} | NOME: {linha[1]} | IDADE: {linha[2]} | CURSO: {linha[3]} ")
+print("-"*50)
+
+pesquisar = input("Digite o curso que deseja os alunos: ")
+cursor.execute("SELECT nome, idade FROM alunos WHERE curso = ?", (pesquisar))
+print(f"Alunos do curso de {pesquisar}")
+for linha in cursor.fetchall():
+    print(f"NOME: {linha[0]} | {linha[1]}")
